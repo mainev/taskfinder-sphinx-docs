@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
   
@@ -108,6 +109,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="app_config.html">Application Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hangfire.html">Hangfire Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="error_codes.html">Error Codes</a></li>
 </ul>
 
@@ -188,9 +190,14 @@
 <li><p>MSSQL Database</p></li>
 <li><p>Veracrypt</p></li>
 </ol>
+<p><strong>IIS</strong>, <strong>URL Rewrite</strong>, and <strong>.NET 5 Hosting Bundle</strong> must first be installed before
+setting the application’s configuration.</p>
 </div>
 <div class="section" id="application-pool">
 <h2>Application Pool<a class="headerlink" href="#application-pool" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Create two application pool for the Task Finder’s API and front-end application.</p></li>
+</ol>
 </div>
 <div class="section" id="site-setup">
 <h2>Site Setup<a class="headerlink" href="#site-setup" title="Permalink to this headline">¶</a></h2>

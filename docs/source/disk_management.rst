@@ -7,6 +7,7 @@ Encrypted Disk
 The current setup of Task Finder uses a `veracrypt <https://www.veracrypt.fr/code/VeraCrypt/>`_ 
 disk and mounts it as the system's **Default Workflow Directory**.
 
+The **Default Workflow Directory** will serve as the root folder of all workflow folders.
 
 Shares
 ------

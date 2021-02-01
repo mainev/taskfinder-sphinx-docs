@@ -6,13 +6,16 @@ multiple actions depending on how you want your task to be automated.
 General Details
 ---------------
 The **General** tab contains all basic information needed to create a workflow.
-(put screenshot here)
 
 When creating your first workflow, the **Use Default Workflow Folder** will be checked as default.
-A workflow folder contains all the logs, archives, and error details of your task.
-When checked, this means Task Finder will create a new folder for every workflow we created on the system's default directory. 
-(provide link here discussing system default workflow directory).
-If this option is unchecked, you will have to provide your own share or directory accessible by the tool.
+A workflow folder contains all the logs, archives, and error details of your task. 
+
+.. image:: images/workflow-folder.png
+  :alt: workflow folder image
+  :align: center
+  :class: with-shadow
+
+All the folders will be generated automatically. The default workflow folder is defined in the :ref:`disk_management:Encrypted Disk`
 
 
 Email Notifications
@@ -20,8 +23,7 @@ Email Notifications
 Task Finder will send an auto-generated email everytime your task has been completed. This can be disabled on the
 **Email Notification** tab. 
 
-If you want Task Finder to send an email only when it detects new data or file, then below checkbox 
-will have to be checked. (put screenshot here)
+**Send only when new data available** - if active, will send email notification only when new files or data are detected.
 
 
 Email Groups
@@ -29,15 +31,41 @@ Email Groups
 On **Email Groups**, you can group email recipients who will receive the task notification. 
 We have 3 types of alerts: **Basic**, **All**, **Error**
 
-* Basic - will receive basic alerts (may contain error only caused by incorrect data or configuration).
-* All - will receive all alerts, be it a simple error or a system error.
-* Error - will receive alerts only when there is an error.
+* **Basic** - will receive basic alerts (may contain error only caused by incorrect data or configuration).
+* **All** - will receive all alerts, be it a simple error or a system error.
+* **Error** - will receive alerts only when there is an error.
 
 Content Settings
 ~~~~~~~~~~~~~~~~
 You can control which section of the notification will be included in the email.
 
-(put screenshot)
+.. figure:: images/email-data-import.png
+  :alt: data import email notification image
+  :align: center
+  :class: with-shadow
+
+  Sample generated email content of **Data Import**
+
+.. figure:: images/email-file-transfer.png
+  :alt: file transactions email notification image
+  :align: center
+  :class: with-shadow
+
+  Sample generated email content of **File Transactions**
+
+.. figure:: images/email-sql-results.png
+  :alt: sql results email notification image
+  :align: center
+  :class: with-shadow
+
+  Sample email content of **SQL Commands** for select SQL (customizable)
+
+.. figure:: images/email-sql-commands.png
+  :alt: sql results email notification image
+  :align: center
+  :class: with-shadow
+
+  Sample generated email content of **SQL Commands** for update/delete SQL
 
 Workflow Groups
 ---------------

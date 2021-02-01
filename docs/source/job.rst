@@ -6,7 +6,10 @@ date and time of the next run in the user's current timezone.
 
 A job can contain multiple workflows and gets executed sequentially. 
 
-(screenshot of multiple workflows)
+.. image:: images/job-multiple-workflows.png
+  :alt: job with multiple workflows image
+  :align: center
+  :class: with-shadow
 
 You can also set the timezone of your job depending on your preference. 
 Task Finder uses cron syntax for the scheduler which gets passed on 

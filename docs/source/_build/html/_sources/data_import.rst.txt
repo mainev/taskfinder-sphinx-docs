@@ -8,8 +8,8 @@ Task Finder currently supports two types of data sources:
 
 Importing from a File
 ---------------------
-When choosing **File** as a source type, you can choose the location of the file from a list of registered SFTP Sites 
-(link to sftp site) or
+When choosing **File** as a source type, 
+you can choose the location of the file from a list of registered :ref:`data_source:SFTP Site`  or
 a network share, or both. 
 
 You can also put multiple file filters like the following:
@@ -70,7 +70,10 @@ will chose here should contain the definitive headers you will use to map with t
 For a **Database** source type, the Default value will be disabled since you can already put a default 
 value from your source sql or stored procedure.
 
-(add note here about command timeout)
+.. note::
+
+    All SQL operations (import or any command) will have the default **Command Timeout**. 
+    Click :ref:`here <sql_command:Command Timeout>` to learn more.
 
 Advance
 ~~~~~~~
@@ -98,11 +101,20 @@ Invalid Columns
 A warning message will be displayed as below. When this happens, you will have to remove this mapping manually or 
 add the missing columns again from the file or database table.
 
+.. image:: images/column-mapper-invalid.png
+  :alt: column mapper invalid mappings image
+  :align: center
+  :class: with-shadow
+
 Other options
 ~~~~~~~~~~~~~
-**Column Mapper** offers additional options below:
+**Column Mapper** offers additional options below. You have to select some rows
+for some options to be clickable.
 
-(put screenshot)
+.. image:: images/column-mapper-more-options.png
+  :alt: column mapper more options image
+  :align: center
+  :class: with-shadow
 
 * **Reset** - to synchronize target columns from the target table on the database. Select this if you want to cancel all the changes you've made.
 

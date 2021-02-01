@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
   
@@ -188,34 +189,46 @@
 multiple actions depending on how you want your task to be automated.</p>
 <div class="section" id="general-details">
 <h2>General Details<a class="headerlink" href="#general-details" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>General</strong> tab contains all basic information needed to create a workflow.
-(put screenshot here)</p>
+<p>The <strong>General</strong> tab contains all basic information needed to create a workflow.</p>
 <p>When creating your first workflow, the <strong>Use Default Workflow Folder</strong> will be checked as default.
-A workflow folder contains all the logs, archives, and error details of your task.
-When checked, this means Task Finder will create a new folder for every workflow we created on the system’s default directory.
-(provide link here discussing system default workflow directory).
-If this option is unchecked, you will have to provide your own share or directory accessible by the tool.</p>
+A workflow folder contains all the logs, archives, and error details of your task.</p>
+<img alt="workflow folder image" class="with-shadow align-center" src="_images/workflow-folder.png" />
+<p>All the folders will be generated automatically. The default workflow folder is defined in the <a class="reference internal" href="disk_management.html"><span class="doc">Disk Management</span></a></p>
 </div>
 <div class="section" id="email-notifications">
 <h2>Email Notifications<a class="headerlink" href="#email-notifications" title="Permalink to this headline">¶</a></h2>
 <p>Task Finder will send an auto-generated email everytime your task has been completed. This can be disabled on the
 <strong>Email Notification</strong> tab.</p>
-<p>If you want Task Finder to send an email only when it detects new data or file, then below checkbox
-will have to be checked. (put screenshot here)</p>
+<p><strong>Send only when new data available</strong> - if active, will send email notification only when new files or data are detected.</p>
 <div class="section" id="email-groups">
 <h3>Email Groups<a class="headerlink" href="#email-groups" title="Permalink to this headline">¶</a></h3>
 <p>On <strong>Email Groups</strong>, you can group email recipients who will receive the task notification.
 We have 3 types of alerts: <strong>Basic</strong>, <strong>All</strong>, <strong>Error</strong></p>
 <ul class="simple">
-<li><p>Basic - will receive basic alerts (may contain error only caused by incorrect data or configuration).</p></li>
-<li><p>All - will receive all alerts, be it a simple error or a system error.</p></li>
-<li><p>Error - will receive alerts only when there is an error.</p></li>
+<li><p><strong>Basic</strong> - will receive basic alerts (may contain error only caused by incorrect data or configuration).</p></li>
+<li><p><strong>All</strong> - will receive all alerts, be it a simple error or a system error.</p></li>
+<li><p><strong>Error</strong> - will receive alerts only when there is an error.</p></li>
 </ul>
 </div>
 <div class="section" id="content-settings">
 <h3>Content Settings<a class="headerlink" href="#content-settings" title="Permalink to this headline">¶</a></h3>
 <p>You can control which section of the notification will be included in the email.</p>
-<p>(put screenshot)</p>
+<div class="figure align-center" id="id1">
+<img alt="data import email notification image" class="with-shadow" src="_images/email-data-import.png" />
+<p class="caption"><span class="caption-text">Sample generated email content of <strong>Data Import</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="file transactions email notification image" class="with-shadow" src="_images/email-file-transfer.png" />
+<p class="caption"><span class="caption-text">Sample generated email content of <strong>File Transactions</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="sql results email notification image" class="with-shadow" src="_images/email-sql-results.png" />
+<p class="caption"><span class="caption-text">Sample email content of <strong>SQL Commands</strong> for select SQL (customizable)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="sql results email notification image" class="with-shadow" src="_images/email-sql-commands.png" />
+<p class="caption"><span class="caption-text">Sample generated email content of <strong>SQL Commands</strong> for update/delete SQL</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="workflow-groups">

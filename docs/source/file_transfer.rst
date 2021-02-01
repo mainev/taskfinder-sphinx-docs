@@ -156,6 +156,6 @@ filename segments during :ref:`File Rename <target_rename_delimiter>`.
 
 Sending File over Email
 -----------------------
-Task Finder can send a copy of the file with a maximum of 5 mb only. 
+Task Finder can send a copy of the file with a maximum of 5 MB only. 
 
 **Batch Attachment** - if active, will group all the files in one email. Otherwise, the system will send one email for each file.

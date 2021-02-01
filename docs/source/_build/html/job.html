@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
   
@@ -106,6 +107,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="app_config.html">Application Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hangfire.html">Hangfire Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="error_codes.html">Error Codes</a></li>
 </ul>
 
@@ -180,7 +182,7 @@
 background processing jobs. On the job’s main page, the <strong>Next Run</strong> column displays the
 date and time of the next run in the user’s current timezone.</p>
 <p>A job can contain multiple workflows and gets executed sequentially.</p>
-<p>(screenshot of multiple workflows)</p>
+<img alt="job with multiple workflows image" class="with-shadow align-center" src="_images/job-multiple-workflows.png" />
 <p>You can also set the timezone of your job depending on your preference.
 Task Finder uses cron syntax for the scheduler which gets passed on
 to Hangfire internally. Click <a class="reference external" href="https://crontab.guru/">CRON</a> for some additional information online.</p>

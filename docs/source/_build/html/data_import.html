@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
   
@@ -114,6 +115,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="app_config.html">Application Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hangfire.html">Hangfire Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="error_codes.html">Error Codes</a></li>
 </ul>
 
@@ -192,8 +194,8 @@ Task Finder currently supports two types of data sources:</p>
 </ul>
 <div class="section" id="importing-from-a-file">
 <h2>Importing from a File<a class="headerlink" href="#importing-from-a-file" title="Permalink to this headline">¶</a></h2>
-<p>When choosing <strong>File</strong> as a source type, you can choose the location of the file from a list of registered SFTP Sites
-(link to sftp site) or
+<p>When choosing <strong>File</strong> as a source type,
+you can choose the location of the file from a list of registered <a class="reference internal" href="data_source.html#sftp-site"><span class="std std-ref">SFTP Site</span></a>  or
 a network share, or both.</p>
 <p>You can also put multiple file filters like the following:</p>
 <ul class="simple">
@@ -249,7 +251,11 @@ type of file you have choosen from <strong>File Type</strong> dropdown on the <s
 will chose here should contain the definitive headers you will use to map with the database columns.</p>
 <p>For a <strong>Database</strong> source type, the Default value will be disabled since you can already put a default
 value from your source sql or stored procedure.</p>
-<p>(add note here about command timeout)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All SQL operations (import or any command) will have the default <strong>Command Timeout</strong>.
+Click <a class="reference internal" href="sql_command.html#command-timeout"><span class="std std-ref">here</span></a> to learn more.</p>
+</div>
 <div class="section" id="advance">
 <h3>Advance<a class="headerlink" href="#advance" title="Permalink to this headline">¶</a></h3>
 <p><strong>Column Mapper</strong> supports the following data format useful for other applications:</p>
@@ -276,11 +282,13 @@ value from your source sql or stored procedure.</p>
 <p><strong>Column Mapper</strong> can detect if the column you have mapped is no longer available on the target table.
 A warning message will be displayed as below. When this happens, you will have to remove this mapping manually or
 add the missing columns again from the file or database table.</p>
+<img alt="column mapper invalid mappings image" class="with-shadow align-center" src="_images/column-mapper-invalid.png" />
 </div>
 <div class="section" id="other-options">
 <h3>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h3>
-<p><strong>Column Mapper</strong> offers additional options below:</p>
-<p>(put screenshot)</p>
+<p><strong>Column Mapper</strong> offers additional options below. You have to select some rows
+for some options to be clickable.</p>
+<img alt="column mapper more options image" class="with-shadow align-center" src="_images/column-mapper-more-options.png" />
 <ul class="simple">
 <li><p><strong>Reset</strong> - to synchronize target columns from the target table on the database. Select this if you want to cancel all the changes you’ve made.</p></li>
 </ul>

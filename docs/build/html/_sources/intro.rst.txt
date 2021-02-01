@@ -19,20 +19,28 @@ On each menu, you will be presented with a main table on the main page. You can 
 such as search, display columns, refresh and quick view.
 
 .. image:: images/main-list.png
-  :alt: Alternative text
+  :alt: main list image
   :align: center
+  :class: with-shadow
 
 When the **Quick View** is selected, it will display small details on the row you selected.
 
-(put screenshot)
+.. image:: images/quick-view.png
+  :alt: quick view image
+  :align: center
+  :class: with-shadow
 
-You can do additional actions on each row with the options button (put screenshot).
 You may also double-click on a row to open an auto-edit dialog.
 
 Variable Syntax
 ~~~~~~~~~~~~~~~
 At some point in your workflow, you will have to define your custom variable to support your task.
 The variable syntax used by Task Finder is ``${VARIABLE_NAME}``
+
+.. image:: images/variable-sample.png
+  :alt: variable samples image
+  :align: center
+  :class: with-shadow
 
 **System variables** are information provided by the system. Below are list of system variables that you can use within Task Finder:
 

@@ -8,8 +8,8 @@ Task Finder currently supports two types of data sources:
 
 Importing from a File
 ---------------------
-When choosing **File** as a source type, you can choose the location of the file from a list of registered SFTP Sites 
-(link to sftp site) or
+When choosing **File** as a source type, 
+you can choose the location of the file from a list of registered :ref:`data_source:SFTP Site`  or
 a network share, or both. 
 
 You can also put multiple file filters like the following:
