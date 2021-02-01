@@ -11,3 +11,10 @@ Below items are required to host the Task Finder on a windows server:
 #. .NET 5 Hosting Bundle
 #. MSSQL Database
 #. Veracrypt
+
+Application Pool
+----------------
+
+
+Site Setup
+----------

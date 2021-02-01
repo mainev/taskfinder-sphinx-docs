@@ -101,12 +101,12 @@
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support and Feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Code Sample</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer's Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="app_config.html">Application Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hangfire.html">Hangfire Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="error_codes.html">Error Codes</a></li>
 </ul>
 
@@ -191,6 +191,11 @@ definitions of each scheduler types:</p>
 <li><p><strong>Predefined Schedule</strong> - auto-generated cron syntax. This is a collection of common schedules.</p></li>
 <li><p><strong>Advance Cron</strong> - If none of the <strong>Predefined Schedule</strong> meet your needs, you can compose your own cron schedule here.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All jobs run on one instance only. This means if your job is still running from the previous trigger,
+the next trigger will be ignored.</p>
+</div>
 <div class="section" id="advance-settings">
 <h2>Advance Settings<a class="headerlink" href="#advance-settings" title="Permalink to this headline">¶</a></h2>
 <p>Advance settings contains the number of threads you wish to

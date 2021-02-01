@@ -63,7 +63,7 @@ the selected column with a variable syntax ``${VARIABLE_NAME}``.
 
 The **Export Filename** should be defined as below to use the variable.
 
-.. code-block:: sql
+.. code-block::
 
         ${REPORTDATE}_file_report
 

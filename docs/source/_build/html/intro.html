@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Workflow" href="workflow.html" />
-    <link rel="prev" title="Welcome to Task Finder’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Welcome to Task Finder’s Documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,7 +92,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#variable-syntax">Variable Syntax</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#terminology">Terminology</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
@@ -102,12 +101,17 @@
 <li class="toctree-l1"><a class="reference internal" href="sql_command.html">SQL Command</a></li>
 <li class="toctree-l1"><a class="reference internal" href="job.html">Job</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_source.html">Data Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disk_management.html">Disk Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support and Feedback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Code Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer's Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_config.html">Application Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hangfire.html">Hangfire Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error_codes.html">Error Codes</a></li>
 </ul>
 
             
@@ -190,7 +194,7 @@ to familiarize yourself on how you can interact with the tool.</p>
 <h3>Table Selection<a class="headerlink" href="#table-selection" title="Permalink to this headline">¶</a></h3>
 <p>On each menu, you will be presented with a main table on the main page. You can do multiple interactions with this page
 such as search, display columns, refresh and quick view.</p>
-<p>(put screenshot of main list)</p>
+<img alt="Alternative text" class="align-center" src="_images/main-list.png" />
 <p>When the <strong>Quick View</strong> is selected, it will display small details on the row you selected.</p>
 <p>(put screenshot)</p>
 <p>You can do additional actions on each row with the options button (put screenshot).
@@ -200,31 +204,65 @@ You may also double-click on a row to open an auto-edit dialog.</p>
 <h3>Variable Syntax<a class="headerlink" href="#variable-syntax" title="Permalink to this headline">¶</a></h3>
 <p>At some point in your workflow, you will have to define your custom variable to support your task.
 The variable syntax used by Task Finder is <code class="docutils literal notranslate"><span class="pre">${VARIABLE_NAME}</span></code></p>
-</div>
-</div>
-<div class="section" id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
-<p>Below are keywords and terms that you should be aware of when using Task Finder.</p>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">:widths: 40 60
- :header-rows: 1</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<p><strong>System variables</strong> are information provided by the system. Below are list of system variables that you can use within Task Finder:</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">System Variables</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 40%" />
+<col style="width: 60%" />
 </colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="row-odd"><td><p>Keyword</p></td>
-<td><p>Description</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">${DATENOW}</span></code></p></td>
+<td><p>provides the current date in default format yyyyMMdd</p></td>
 </tr>
-<tr class="row-even"><td><p>System Variable</p></td>
-<td><p>information provided by the system. Each system variable differs for every workflow
-and every jobs.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">${DATENOW|format}</span></code></p></td>
+<td><p>provides the current date with custom format. example: <code class="docutils literal notranslate"><span class="pre">${DATENOW|yyyy-MM-dd}</span></code> (follows C# date format declaration)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Filename Segments</p></td>
-<td></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">${FILE}</span></code></p></td>
+<td><p>full name of the file.
+Example: C:\\files\sitel_data_file.csv</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">${FILENAME}</span></code></p></td>
+<td><p>provides filename of the file including the file extension. example: sitel_data_file.csv</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">${FILENAMEWITHOUTEXTENSION}</span></code></p></td>
+<td><p>provides filename without the file extension. Example: sitel_data_file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">${GUID}</span></code></p></td>
+<td><p><strong>Globally Unique IDentifier</strong> computed by Windows. Provides unique identifier for every record.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">${IMPORTID}</span></code></p></td>
+<td><p>Unique ID provided for each workflow every time the job runs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">${JOBPROCESSID}</span></code></p></td>
+<td><p>Unique ID provided for each job every time the job runs. JOBPROCESSID is associated with hangfire job id.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">${OUTPUTFILE}</span></code></p></td>
+<td><p>Fullname of the expected output file during file transfer.
+Example for a .wav file converted to .mp3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">${WORKFLOWARCHIVE}</span></code></p></td>
+<td><p>workflow folder containing archives</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">${WORKFLOWEXPORT}</span></code></p></td>
+<td><p>workflow folder containing reports</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">${WORKFLOWFOLDER}</span></code></p></td>
+<td><p>root folder for workflow containing folders for archives, reports, and logs</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Variables in Task Finder are case-sensitive. Make sure to use the correct format to avoid
+issues.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -235,7 +273,7 @@ and every jobs.</p></td>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="workflow.html" class="btn btn-neutral float-right" title="Workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Task Finder’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Task Finder’s Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
