@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Data Import &mdash; Task Finder 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Executable" href="executable.html" />
+    <link rel="prev" title="Workflow" href="workflow.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Task Finder
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User's Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Import</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#importing-from-a-file">Importing from a File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importing-from-a-database">Importing from a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-import-destination">Data Import Destination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#column-mapper">Column Mapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#advance">Advance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invalid-columns">Invalid Columns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-options">Other options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="executable.html">Executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_transfer.html">File Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql_command.html">SQL Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="job.html">Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_source.html">Data Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support and Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Sample</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer's Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Task Finder</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Data Import</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/data_import.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-import">
+<h1>Data Import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
+<p><strong>Data Import</strong>, as the name it says, handles data import to a database.
+Task Finder currently supports two types of data sources:</p>
+<ul class="simple">
+<li><p>File</p></li>
+<li><p>Database</p></li>
+</ul>
+<div class="section" id="importing-from-a-file">
+<h2>Importing from a File<a class="headerlink" href="#importing-from-a-file" title="Permalink to this headline">¶</a></h2>
+<p>When choosing <strong>File</strong> as a source type, you can choose the location of the file from a list of registered SFTP Sites
+(link to sftp site) or
+a network share, or both.</p>
+<p>You can also put multiple file filters like the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code> - will select all files starting with <strong>data</strong> in filename</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*data</span></code> - will select all files containing word <strong>data</strong> in filename</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_${DATENOW}</span></code> - using <code class="docutils literal notranslate"><span class="pre">${DATENOW}</span></code> as a system variable, will select all files starting with <strong>data_{yyyyMMdd}</strong> where date is the current date</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On <strong>File</strong> source type, you should <strong>NOT</strong> include the file extension on the file filters field.
+Task Finder only supports the following file types: CSV, TXT, and XLSX</p>
+</div>
+<p><strong>File has header</strong> - will ignore the first row of the file.</p>
+<p><strong>Delimiter</strong> - is the character used on the file as a delimiter.</p>
+<p><strong>Skip Last Lines</strong> - will ignore the last number of lines on the file.</p>
+<p><strong>Include Subfolder</strong> - will allow Task Finder to search for all subfolders on the remote or local path.</p>
+<p><strong>Remove from Source</strong> - by default, will always remove or delete the file from the source folder when doing a <strong>Data Import</strong>.</p>
+<p><strong>Archive File</strong> - by default, will always archive the file when doing a <strong>Data Import</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Task Finder can import values with comma even if the file uses comma (,) as a delimiter. However this only works if the value is enclosed in double-quotes.
+It will also ignore a row in the file containing only white spaces or no values at all.</p>
+</div>
+</div>
+<div class="section" id="importing-from-a-database">
+<h2>Importing from a Database<a class="headerlink" href="#importing-from-a-database" title="Permalink to this headline">¶</a></h2>
+<p>Select the <strong>Source DB Connection</strong> where the data will be coming from. You can import from a database by using an <strong>SQL</strong> select query, or by executing a <strong>Stored Procedure</strong>. Task Finder
+can display all available stored procedures with their required parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When choosing <strong>Stored Procedure</strong>, it is imperative that the stored procedure returns a result set.</p>
+</div>
+</div>
+<div class="section" id="data-import-destination">
+<h2>Data Import Destination<a class="headerlink" href="#data-import-destination" title="Permalink to this headline">¶</a></h2>
+<p>This contains the <strong>Target DB Connection</strong>, and all the available tables within.</p>
+</div>
+<div class="section" id="column-mapper">
+<h2>Column Mapper<a class="headerlink" href="#column-mapper" title="Permalink to this headline">¶</a></h2>
+<p><strong>Column Mapper</strong> is used to connect the columns from a file/database to the destination database. It contains all the columns available on the
+choosen target or destination table.</p>
+<ul class="simple">
+<li><p><strong>Target</strong> - target columns of the destination table</p></li>
+<li><p><strong>Source</strong> - source columns of the file or sql query</p></li>
+<li><p><strong>Default Value</strong> - used to put a default value for file source type only</p></li>
+<li><p><strong>Max</strong> - displays max length allowed of the target column (-1 if column data type is not a string)</p></li>
+<li><p><strong>Remove</strong> - will remove the current mapping (if already mapped)</p></li>
+<li><p><strong>Advance</strong> - contains other options of Column Mapper (see Advance section)</p></li>
+</ul>
+<p>For a <strong>File</strong> source type, the source fields may not be available at first when opening the <strong>Column Mapper</strong>.
+To get the source fields from a file, select the <strong>Choose File</strong> button found in the lower-left corner. You can only select the
+type of file you have choosen from <strong>File Type</strong> dropdown on the <strong>Source Tab</strong> of the <strong>Data Import</strong> action. The file that you
+will chose here should contain the definitive headers you will use to map with the database columns.</p>
+<p>For a <strong>Database</strong> source type, the Default value will be disabled since you can already put a default
+value from your source sql or stored procedure.</p>
+<p>(add note here about command timeout)</p>
+<div class="section" id="advance">
+<h3>Advance<a class="headerlink" href="#advance" title="Permalink to this headline">¶</a></h3>
+<p><strong>Column Mapper</strong> supports the following data format useful for other applications:</p>
+<ul class="simple">
+<li><p><strong>Phone</strong> - will convert your data into different standard formats (e.g. e164, national, rfc3966)</p></li>
+<li><p><strong>Phone Type</strong> - will detect the type of phone if the data is a phone number (e.g. mobile, fixed_line, etc)</p></li>
+<li><p><strong>None</strong> - no data format applied</p></li>
+</ul>
+<p>When choosing <strong>Phone</strong> data format, you will be presented with the following options when the data provided is not a valid phone number:</p>
+<ul class="simple">
+<li><p><strong>Empty</strong> - will insert the data as empty on the database</p></li>
+<li><p><strong>Ignore</strong> - will ignore the format and use the provided data</p></li>
+<li><p><strong>Reject</strong> - will reject the data, row will not be inserted on the database</p></li>
+</ul>
+<p><strong>Validators</strong> are just basic rules checked by <strong>Column Mapper</strong> described as the following:</p>
+<ul class="simple">
+<li><p><strong>Dedupe</strong> - will reject duplicates of that column within the file or current selected sql only</p></li>
+<li><p><strong>Truncate</strong> - if the source data exceeds the maximum length of the target column, it will remove excess characters from the data</p></li>
+<li><p><strong>Required</strong> - first check only to reject the row if no data provided (database constraints will override this)</p></li>
+</ul>
+</div>
+<div class="section" id="invalid-columns">
+<h3>Invalid Columns<a class="headerlink" href="#invalid-columns" title="Permalink to this headline">¶</a></h3>
+<p><strong>Column Mapper</strong> can detect if the column you have mapped is no longer available on the target table.
+A warning message will be displayed as below. When this happens, you will have to remove this mapping manually or
+add the missing columns again from the file or database table.</p>
+</div>
+<div class="section" id="other-options">
+<h3>Other options<a class="headerlink" href="#other-options" title="Permalink to this headline">¶</a></h3>
+<p><strong>Column Mapper</strong> offers additional options below:</p>
+<p>(put screenshot)</p>
+<ul class="simple">
+<li><p><strong>Reset</strong> - to synchronize target columns from the target table on the database. Select this if you want to cancel all the changes you’ve made.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Reset</strong> will only return the columns to the previous state before you made any changes. You can also use this to update the Max field
+if there has been any changes from the database side.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Automap</strong> - will automatically map the columns based on the source if they are the same or equal (case sensitive)</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="executable.html" class="btn btn-neutral float-right" title="Executable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="workflow.html" class="btn btn-neutral float-left" title="Workflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Sitel Group -  EMEA Application Development.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

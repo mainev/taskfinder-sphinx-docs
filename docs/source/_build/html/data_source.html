@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Data Source &mdash; Task Finder 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Support and Feedback" href="support.html" />
+    <link rel="prev" title="Job" href="job.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Task Finder
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User's Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Data Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executable.html">Executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_transfer.html">File Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql_command.html">SQL Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="job.html">Job</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#database-connection">Database Connection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-queries">System Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sftp-site">SFTP Site</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support and Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Sample</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer's Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Task Finder</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Data Source</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/data_source.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-source">
+<h1>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h1>
+<p><strong>Data Source</strong> defines external sources used by Task Finder.</p>
+<div class="section" id="database-connection">
+<h2>Database Connection<a class="headerlink" href="#database-connection" title="Permalink to this headline">¶</a></h2>
+<p>Before you can access your database on Task Finder, you will have to add it first
+on the <strong>Database Connection</strong>. Task Finder supports two types of database:</p>
+<ul class="simple">
+<li><p><strong>MSSQL</strong> (SQL Server)</p></li>
+<li><p><strong>ORACLE</strong></p></li>
+</ul>
+<div class="section" id="system-queries">
+<h3>System Queries<a class="headerlink" href="#system-queries" title="Permalink to this headline">¶</a></h3>
+<p><strong>System Queries</strong> are sql queries used by Task Finder to extract names of tables, stored procedures,
+and columns used in the workflow.</p>
+<p>Change this only when the default queries below doesn’t work on your database.</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">MSSQL Default System Queries</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>DB Data</p></th>
+<th class="head"><p>SQL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Columns and length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">COLUMN_NAME,</span> <span class="pre">CHARACTER_MAXIMUM_LENGTH</span> <span class="pre">FROM</span> <span class="pre">INFORMATION_SCHEMA.COLUMNS</span> <span class="pre">WHERE</span> <span class="pre">TABLE_NAME</span> <span class="pre">=</span> <span class="pre">&#64;tableName</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">COLUMN_NAME</span> <span class="pre">ASC</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Tables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">NAME</span> <span class="pre">FROM</span> <span class="pre">SYS.TABLES</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Stored Procedures</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">NAME</span> <span class="pre">FROM</span> <span class="pre">SYS.PROCEDURES</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Oracle Default System Queries</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>DB Data</p></th>
+<th class="head"><p>SQL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Columns and length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">COLUMN_NAME,</span> <span class="pre">DATA_LENGTH,</span> <span class="pre">DATA_TYPE</span> <span class="pre">FROM</span> <span class="pre">all_tab_cols</span> <span class="pre">WHERE</span> <span class="pre">TABLE_NAME</span> <span class="pre">=</span> <span class="pre">:tableName</span> <span class="pre">and</span> <span class="pre">virtual_column</span> <span class="pre">=</span> <span class="pre">'NO'</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">COLUMN_NAME</span> <span class="pre">ASC</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Tables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">TABLE_NAME</span> <span class="pre">from</span> <span class="pre">tabs</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">TABLE_NAME</span> <span class="pre">ASC</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Stored Procedures</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">OBJECT_NAME</span> <span class="pre">from</span> <span class="pre">User_Procedures</span> <span class="pre">WHERE</span> <span class="pre">OBJECT_TYPE</span> <span class="pre">=</span> <span class="pre">'PROCEDURE'</span> <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">OBJECT_NAME</span> <span class="pre">ASC</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="sftp-site">
+<h2>SFTP Site<a class="headerlink" href="#sftp-site" title="Permalink to this headline">¶</a></h2>
+<p>The same with <strong>Database Connection</strong>, your <strong>SFTP Site</strong> will have to be registered here first before you
+can use them in your workflow. Task Finder uses <a class="reference external" href="https://winscp.net/eng/docs/library">WinSCP.NET</a> assembly and COM library
+to handle all SFTP operations.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="support.html" class="btn btn-neutral float-right" title="Support and Feedback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="job.html" class="btn btn-neutral float-left" title="Job" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Sitel Group -  EMEA Application Development.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

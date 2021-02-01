@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Workflow &mdash; Task Finder 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Import" href="data_import.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Task Finder
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User's Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-details">General Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#email-notifications">Email Notifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#email-groups">Email Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#content-settings">Content Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-groups">Workflow Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Data Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executable.html">Executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_transfer.html">File Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql_command.html">SQL Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="job.html">Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_source.html">Data Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disk_management.html">Disk Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support and Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Sample</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer's Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_config.html">Application Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error_codes.html">Error Codes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Task Finder</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Workflow</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/workflow.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="workflow">
+<h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
+<p>A workflow is a step-by-step definition of a task or procedure. It can contain
+multiple actions depending on how you want your task to be automated.</p>
+<div class="section" id="general-details">
+<h2>General Details<a class="headerlink" href="#general-details" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>General</strong> tab contains all basic information needed to create a workflow.
+(put screenshot here)</p>
+<p>When creating your first workflow, the <strong>Use Default Workflow Folder</strong> will be checked as default.
+A workflow folder contains all the logs, archives, and error details of your task.
+When checked, this means Task Finder will create a new folder for every workflow we created on the system’s default directory.
+(provide link here discussing system default workflow directory).
+If this option is unchecked, you will have to provide your own share or directory accessible by the tool.</p>
+</div>
+<div class="section" id="email-notifications">
+<h2>Email Notifications<a class="headerlink" href="#email-notifications" title="Permalink to this headline">¶</a></h2>
+<p>Task Finder will send an auto-generated email everytime your task has been completed. This can be disabled on the
+<strong>Email Notification</strong> tab.</p>
+<p>If you want Task Finder to send an email only when it detects new data or file, then below checkbox
+will have to be checked. (put screenshot here)</p>
+<div class="section" id="email-groups">
+<h3>Email Groups<a class="headerlink" href="#email-groups" title="Permalink to this headline">¶</a></h3>
+<p>On <strong>Email Groups</strong>, you can group email recipients who will receive the task notification.
+We have 3 types of alerts: <strong>Basic</strong>, <strong>All</strong>, <strong>Error</strong></p>
+<ul class="simple">
+<li><p>Basic - will receive basic alerts (may contain error only caused by incorrect data or configuration).</p></li>
+<li><p>All - will receive all alerts, be it a simple error or a system error.</p></li>
+<li><p>Error - will receive alerts only when there is an error.</p></li>
+</ul>
+</div>
+<div class="section" id="content-settings">
+<h3>Content Settings<a class="headerlink" href="#content-settings" title="Permalink to this headline">¶</a></h3>
+<p>You can control which section of the notification will be included in the email.</p>
+<p>(put screenshot)</p>
+</div>
+</div>
+<div class="section" id="workflow-groups">
+<h2>Workflow Groups<a class="headerlink" href="#workflow-groups" title="Permalink to this headline">¶</a></h2>
+<p><strong>Workflow Groups</strong> are just a way to group your workflows. You can use this to filter your workflows or jobs
+when working on multiple workflows.</p>
+</div>
+<div class="section" id="actions">
+<h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
+<p>Once we created the workflow, the <strong>Actions</strong> tab will then be accessible.</p>
+<p>An <strong>Action</strong> is a built-in process of Task Finder to simplify common task such as the following:</p>
+<ul class="simple">
+<li><p>Data Import</p></li>
+<li><p>Run Executable</p></li>
+<li><p>File Transfer</p></li>
+<li><p>SQL Command</p></li>
+</ul>
+<p>Next topic will discuss all types of action the Task Finder currently supports.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="data_import.html" class="btn btn-neutral float-right" title="Data Import" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Sitel Group -  EMEA Application Development.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

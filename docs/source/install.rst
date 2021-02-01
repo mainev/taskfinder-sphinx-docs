@@ -1,0 +1,20 @@
+Installation
+============
+
+Requirements
+------------
+
+Below items are required to host the Task Finder on a windows server:
+
+#. IIS
+#. URL Rewrite
+#. .NET 5 Hosting Bundle
+#. MSSQL Database
+#. Veracrypt
+
+Application Pool
+----------------
+
+
+Site Setup
+----------

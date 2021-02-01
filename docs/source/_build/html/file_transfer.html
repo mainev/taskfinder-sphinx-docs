@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File Transfer &mdash; Task Finder 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SQL Command" href="sql_command.html" />
+    <link rel="prev" title="Executable" href="executable.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Task Finder
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User's Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Data Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="executable.html">Executable</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">File Transfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-source">File Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rename-file">Rename File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#source-filename-format">Source Filename Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-filename-format">Output Filename Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delimiter">Delimiter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renaming-from-a-database">Renaming from a Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-executable">File Executable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-destination">File Destination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-dynamic-folder">Using Dynamic Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-file-over-email">Sending File over Email</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sql_command.html">SQL Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="job.html">Job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_source.html">Data Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support and Feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Sample</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer's Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Task Finder</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>File Transfer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/file_transfer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-transfer">
+<h1>File Transfer<a class="headerlink" href="#file-transfer" title="Permalink to this headline">¶</a></h1>
+<p><strong>File Transfer</strong> is where we can transfer files from local to a remote location, or vice versa.</p>
+<div class="section" id="file-source">
+<h2>File Source<a class="headerlink" href="#file-source" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Source</strong> defines the location of the file that you need to transfer.</p>
+<ul class="simple">
+<li><p><strong>SFTP Site</strong> - if you need to download a file from an SFTP Site</p></li>
+<li><p><strong>Remote Path</strong> - remote path of the SFTP</p></li>
+<li><p><strong>Local Source Path</strong> - local/network path of the file to be transferred</p></li>
+<li><p><strong>File Filters</strong> - can accept multiple parameters, file extension is required here</p></li>
+<li><p><strong>Remove from Source</strong> - will delete the file from the source location</p></li>
+<li><p><strong>Archive Source File</strong> - will copy the file to the workflow archive directory</p></li>
+<li><p><strong>Include Subfolder</strong> - will search for the files matching the filters to all subdirectories (nested)</p></li>
+</ul>
+</div>
+<div class="section" id="rename-file">
+<span id="target-rename"></span><h2>Rename File<a class="headerlink" href="#rename-file" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Rename</strong> tab when configured, will rename the file to your destination folder.
+It is important to set the following fields to rename the files being transferred.</p>
+<ol class="arabic simple">
+<li><p>Source Filename Format</p></li>
+<li><p>Output Filename Format</p></li>
+<li><p>Delimiter</p></li>
+</ol>
+<div class="section" id="source-filename-format">
+<h3>Source Filename Format<a class="headerlink" href="#source-filename-format" title="Permalink to this headline">¶</a></h3>
+<p>Defines the format of the original file. Here you need to assign each filename segments with your own custom variable. (refer to variable syntax)</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sitel_file_1234</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Source Filename Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${PREFIX}_${MYPARAM2}_${FILEID}
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-filename-format">
+<h3>Output Filename Format<a class="headerlink" href="#output-filename-format" title="Permalink to this headline">¶</a></h3>
+<p>This is where you will define how your new filename will look like. You can add new strings
+or remove some filename segments.</p>
+<p>Below output format will add a new prefix “FILE1” to the file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FILE1_${PREFIX}_${MYPARAM2}_${FILEID}
+</pre></div>
+</div>
+<p>Renamed File</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FILE1_sitel_file_1234</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delimiter">
+<h3>Delimiter<a class="headerlink" href="#delimiter" title="Permalink to this headline">¶</a></h3>
+<p>Delimiter characters used to identify your filename segments. You are allowed to put multiple characters here.</p>
+<p>Below example will create segments of the filename parsed by hypen “-” or underscore “_”.</p>
+<p>Delimiter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">_</span>
+</pre></div>
+</div>
+<p>Source File</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2021</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">29</span><span class="n">_sitel_file_1234</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p id="target-rename-delimiter">Source Format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${YEAR}-${MONTH}-${DAY}_${PARAM1}_${PARAM2}_${FILEID}
+</pre></div>
+</div>
+</div>
+<div class="section" id="renaming-from-a-database">
+<h3>Renaming from a Database<a class="headerlink" href="#renaming-from-a-database" title="Permalink to this headline">¶</a></h3>
+<p>If you need to get the new filename from a database, you will have to select the database connection together with the command
+type.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">NEWFILENAME</span> <span class="k">FROM</span> <span class="n">FILE_LIST</span> <span class="k">WHERE</span> <span class="n">FILE_ID</span> <span class="o">=</span> <span class="s1">&#39;${FILEID}&#39;</span>
+</pre></div>
+</div>
+<p>You can use here the variables you created from the <strong>Source Format</strong>. You can use the <code class="docutils literal notranslate"><span class="pre">NEWFILENAME</span></code> column to the output format as below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${NEWFILENAME}_${PREFIX}_${MYPARAM2}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to create your variables with <strong>Unique</strong> names and in <strong>UPPERCASE</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="file-executable">
+<h2>File Executable<a class="headerlink" href="#file-executable" title="Permalink to this headline">¶</a></h2>
+<p>If you need to run another program with the file, such as conversion, encryption, etc.,
+you can do this on the <strong>Executable</strong> tab within the <strong>File Transfer</strong> action.</p>
+<p>Interface is the same with the basic <a class="reference internal" href="executable.html"><span class="doc">Executable</span></a> action type.
+However you will need to provide the expected <strong>Output File Extension</strong>.
+This helps Task Finder to identify which file will be transferred in case of conversion.</p>
+</div>
+<div class="section" id="file-destination">
+<h2>File Destination<a class="headerlink" href="#file-destination" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>File Destination</strong> tab contains all configuration where the file will be downloaded or transferred.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Use Workflow Folder as Destination Folder</strong></dt><dd><p>All files will be kept temporarily on the workflow folder until
+all actions in the workflow has been completed.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Include Subfolder in Destination</strong></dt><dd><p>If your source files are located within nested subfolders, and you need to keep the same
+folder hierarchy on the destination folder, then you need to enable this.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Archive Output File</strong></dt><dd><p>This will keep the final output of the file on the workflow archive folder. Useful
+when doing conversion, compression, encryption, and other file operations.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="using-dynamic-folder">
+<h2>Using Dynamic Folder<a class="headerlink" href="#using-dynamic-folder" title="Permalink to this headline">¶</a></h2>
+<p>Other tasks requires to create a new folder everytime your task runs. This new folder could be
+the current date or other reference to keep track of the files. This is possible in Task Finder
+by adding a variable syntax on the local or remote destination folder.</p>
+<p>Below example will create a new folder of the current date every time the task run.
+Default <code class="docutils literal notranslate"><span class="pre">${DATENOW}</span></code> format is <code class="docutils literal notranslate"><span class="pre">yyyyMMdd</span></code>. (add reference to system variables here)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\eu999k16tsks02\shared\${DATENOW}
+</pre></div>
+</div>
+<p>Below example will create a new folder depending on the value retrieved from the database or
+filename segments during <a class="reference internal" href="#target-rename-delimiter"><span class="std std-ref">File Rename</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\\eu999k16tsks02\shared\${YEAR}\${MONTH}\${DAY}
+</pre></div>
+</div>
+</div>
+<div class="section" id="sending-file-over-email">
+<h2>Sending File over Email<a class="headerlink" href="#sending-file-over-email" title="Permalink to this headline">¶</a></h2>
+<p>Task Finder can send a copy of the file with a maximum of 5 mb only.</p>
+<p><strong>Batch Attachment</strong> - if active, will group all the files in one email. Otherwise, the system will send one email for each file.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sql_command.html" class="btn btn-neutral float-right" title="SQL Command" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="executable.html" class="btn btn-neutral float-left" title="Executable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Sitel Group -  EMEA Application Development.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
